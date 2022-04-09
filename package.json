@@ -1,0 +1,41 @@
+{
+  "name": "ajc-jest-react-testing-library",
+  "version": "1.0.0",
+  "description": "Easy to use jest and react testing library configuration and helper functions designed for testing React projects.",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajc24/ajc-jest-react-testing-library.git"
+  },
+  "author": "Anthony Cox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajc24/ajc-jest-react-testing-library/issues"
+  },
+  "homepage": "https://github.com/ajc24/ajc-jest-react-testing-library#readme",
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "test": "npm run test-unit-coverage",
+    "test-unit": "jest --config=./tests/jest-config/unit.config.js",
+    "test-unit-coverage": "npm run test-unit -- --collectCoverage"
+  },
+  "dependencies": {
+    "@testing-library/react": "^13.0.0",
+    "jest": "^27.5.1",
+    "jsdom": "^19.0.0",
+    "jsdom-global": "^3.0.2",
+    "react-test-renderer": "^18.0.0"
+  },
+  "devDependencies": {
+    "ajc-babel-config": "github:ajc24/ajc-babel-config",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "peerDependencies": {
+    "react": ">= 18.0.x",
+    "react-dom": ">= 18.0.x"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
