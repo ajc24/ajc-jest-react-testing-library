@@ -18,7 +18,9 @@ const configureCommonJestSettings = function (rootDirectory) {
     },
     rootDir: rootDirectory || '../../',
     setupFilesAfterEnv: [],
-    testURL: 'http://localhost/',
+    testEnvironmentOptions: {
+      url: 'http://localhost/'
+    },
     verbose: true
   };
 };
