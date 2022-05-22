@@ -8,7 +8,7 @@ describe('Jest Configuration Files', () => {
   const expectedCssMockFileLocation = '<rootDir>/tests/jest-config/mocks/cssMock.js';
   const expectedDefaultRootDirectoryLocation = '../../';
   const expectedImageMockFileLocation = '<rootDir>/tests/jest-config/mocks/imageMock.js';
-  const expectedTestURL = 'http://localhost/';
+  const expectedTestEnvironmentOptionsURL = 'http://localhost/';
 
   describe('configureUnitTests() method behaviour - Default root directory', () => {
     let jestConfig;
@@ -39,8 +39,12 @@ describe('Jest Configuration Files', () => {
       expect(jestConfig.setupFilesAfterEnv.length).toBe(0);
     });
 
-    it('verifies that the test URL property is set correctly', () => {
-      expect(jestConfig.testURL).toBe(expectedTestURL);
+    it('verifies that the test environment options property is set defined', () => {
+      expect(jestConfig.testEnvironmentOptions).toBeDefined();
+    });
+
+    it('verifies that the URL is set to the test environment options property', () => {
+      expect(jestConfig.testEnvironmentOptions.url).toBe(expectedTestEnvironmentOptionsURL);
     });
 
     it('verifies that the verbose property is set correctly', () => {
@@ -137,8 +141,12 @@ describe('Jest Configuration Files', () => {
       expect(jestConfig.setupFilesAfterEnv.length).toBe(0);
     });
 
-    it('verifies that the test URL property is set correctly', () => {
-      expect(jestConfig.testURL).toBe(expectedTestURL);
+    it('verifies that the test environment options property is set defined', () => {
+      expect(jestConfig.testEnvironmentOptions).toBeDefined();
+    });
+
+    it('verifies that the URL is set to the test environment options property', () => {
+      expect(jestConfig.testEnvironmentOptions.url).toBe(expectedTestEnvironmentOptionsURL);
     });
 
     it('verifies that the verbose property is set correctly', () => {
